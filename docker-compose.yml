@@ -1,0 +1,68 @@
+version: "3.8"
+services:
+  razornotes_fe:
+    container_name: razornotes_fe
+      #build: .
+    image: charckle/razornotes_fe:1.0.0
+    depends_on:
+      - razornotes
+    ports:
+      - "4000:80"
+    environment:
+        ENVCONFIG: PROD
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "10"  
+    restart: unless-stopped
+
+  razornotes:
+    container_name: razor_notes
+    image: charckle/razornotes:1.0.18
+    depends_on:
+      - db_razor_notes
+    ports:
+      - "5000:8000"
+    environment:
+        ENVCONFIG: PROD
+        APP_NAME: "Razor Notes"
+        DB_USERNAME: ${DB_USERNAME}
+        DB_PASSWORD: ${DB_PASSWORD}
+        DB_HOST: db_razor_notes
+        DB_NAME: ${DB_NAME}
+        DB_PORT: 3306
+        SECRET_KEY: ${SECRET_KEY}
+        MODULE_MEMORY: True
+        ICON_COLOR: "RED"
+    volumes:
+      - ./files_u:/app/app/files_u
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "10"  
+    networks:
+      - db_net
+    restart: unless-stopped
+
+  db_razor_notes:
+    image: linuxserver/mariadb:10.11.5
+    container_name: db_razor_notes
+    #ports:
+    #  - "8181:3306"
+    environment:
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS}
+      MYSQL_DATABASE: ${DB_NAME}
+    volumes:
+      - ./mariadb:/config
+      - ./db:/config/initdb.d/:ro
+    networks:
+      - db_net
+    restart: unless-stopped
+
+networks:
+  db_net:
+  

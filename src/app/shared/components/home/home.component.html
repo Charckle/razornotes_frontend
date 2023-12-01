@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-3">
+
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+          <div class="card-header">Pinned Notes</div>
+    
+          <div class="d-flex" *ngFor="let pinned_n of notesPinned">
+            <div class="flex-shrink-0">
+              <a class="btn align-self-center mr-3" [routerLink]="['/note', pinned_n._id]"><img src="/assets/icons/pinned.svg" height="32" width="32"></a>
+            </div>
+            <div class="flex-grow-1 ms-3">
+              <h6 class="mt-0">{{ pinned_n._id }}</h6>
+              <p>{{ pinned_n.text }} ...</p>
+            </div>
+          </div>
+        
+        </div>
+
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-4" *ngFor="let index_n of notesIndex">
+          <div class="media" style="font-size: 12px;background-image: linear-gradient(to bottom right, hsl(64, 100%, 86%), rgb(255, 243, 181));border: 1px solid hsl(51, 46%, 56%);border-radius: 5px;margin-bottom: 5px;">
+
+            <div class="container">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <a class="btn align-self-center mr-3" [routerLink]="['/note', index_n._id]"><img src="/assets/icons/pinned.svg" height="32" width="32"></a>
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <h6 class="mt-0">{{ index_n._id }}</h6>
+                  <p>{{ index_n.text }} ...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>

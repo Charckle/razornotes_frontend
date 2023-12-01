@@ -1,0 +1,15 @@
+<span *ngIf="useBootstrapStyles; else elseBlock">
+
+<app-navigation></app-navigation>
+<main>
+    <br>
+  <div class="container-fluid mt-4 content">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
+</span>
+
+<ng-template #elseBlock>
+  <router-outlet></router-outlet>
+</ng-template>
