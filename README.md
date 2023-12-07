@@ -7,9 +7,9 @@
 In the scope of the ESSA DevOps Akademija (European Software skills alliance), I created a frontend in Angular for an existing project, Razornotes, which is an app for note taking.
 
 ### Scope
-The end goal for this project was to run our apps with cloud-init. For the virtualization I used VirtualBox, and for the configuration I used Vagrant.
+The end goal for this project was to run our apps with cloud-init. For the virtualization I used VirtualBox and for the configuration I used Vagrant.
 
-I included two versions of the setup, inside the Vagrant folder.
+I included two versions of the setup:
 
 - Deployment with Vagrantfile provisioning (only the frontend)
 - Deployment with cloud-init
