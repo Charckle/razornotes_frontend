@@ -2,6 +2,7 @@
 - Two versions created
 	+ Vagrantfile (only angular Frontend)
 	+ cloud-init (FE + flask backend)
+- Presentation link: hkck here](ttps://docs.google.com/presentation/d/e/2PACX-1vSVqaP8XMVtBUUquelsYGh8MnFeUUnvyHG6O2XV3KsDRO9CRaNrU34ADdFt8cq0kXRBPIa8PqCZQAwY/pub?start=false&loop=false&delayms=60000)
 
 ## Project: Razor Notes on Vagrant
 In the scope of the ESSA DevOps Akademija (European Software skills alliance), I created a frontend in Angular for an existing project, Razornotes, which is an app for note taking.
@@ -15,8 +16,6 @@ I included two versions of the setup:
 - Deployment with cloud-init
 
 None of the versions use environmental variables by design. The default configuration is used, or hardcoded in the cloud-init.yml file.
-
-Both variants pose different challenges, since they can both be run as root, but they have differently, probably due to each line of code being run separately from the others.
 
 - The frontend is accessible on localhost:8083
 - The backend is accessible on localhost:5000
@@ -39,13 +38,4 @@ Cloud-init executed the commands with no problems, but the result is all run und
 - `./Cloud_init/Both`
 
 ### Usage of authentication
-SSH authentication for github is not yet implemented, but will be, this is what I got:  
-<pre>
-write_files:
-  - content: |
-      -----BEGIN RSA PRIVATE KEY-----
-      ... (your private key content) ...
-      -----END RSA PRIVATE KEY-----
-    path: /root/.ssh/id_rsa
-    permissions: '0600'
-</pre>
+SSH authentication for github is implemented trough private/pubic key. The reporistory is set to public, but git clone is set to use ssh.  
