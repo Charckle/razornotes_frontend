@@ -37,3 +37,15 @@ Cloud-init executed the commands with no problems, but the result is all run und
 - `./Cloud_init/BE_only`
 - `./Cloud_init/FE_only`
 - `./Cloud_init/Both`
+
+### Usage of authentication
+SSH authentication for github is not yet implemented, but will be, this is what I got:  
+<pre>
+write_files:
+  - content: |
+      -----BEGIN RSA PRIVATE KEY-----
+      ... (your private key content) ...
+      -----END RSA PRIVATE KEY-----
+    path: /root/.ssh/id_rsa
+    permissions: '0600'
+</pre>
