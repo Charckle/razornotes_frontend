@@ -2,7 +2,7 @@
 - Two versions created
 	+ Vagrantfile (only angular Frontend)
 	+ cloud-init (FE + flask backend)
-- Presentation link: [click here](ttps://docs.google.com/presentation/d/e/2PACX-1vSVqaP8XMVtBUUquelsYGh8MnFeUUnvyHG6O2XV3KsDRO9CRaNrU34ADdFt8cq0kXRBPIa8PqCZQAwY/pub?start=false&loop=false&delayms=60000)
+- Presentation link: [click here](https://docs.google.com/presentation/d/e/2PACX-1vSVqaP8XMVtBUUquelsYGh8MnFeUUnvyHG6O2XV3KsDRO9CRaNrU34ADdFt8cq0kXRBPIa8PqCZQAwY/pub?start=false&loop=false&delayms=60000)
 
 ## Project: Razor Notes on Vagrant
 In the scope of the ESSA DevOps Akademija (European Software skills alliance), I created a frontend in Angular for an existing project, Razornotes, which is an app for note taking.
